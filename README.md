@@ -21,7 +21,7 @@ Clona el repositorio:
 bash
 Copiar
 Editar
-git clone https://github.com/harelo12/PASSGENERATOR.git
+git clone https://github.com/harelo12/passgenerator.git
 Compilación: Para compilar este proyecto, se requiere un compilador compatible con C y la API de Windows (como MinGW o Visual Studio). Si usas Visual Studio, abre el proyecto desde allí y compílalo directamente.
 
 Ejecución: Al ejecutar el programa, este generará una contraseña aleatoria y la mostrará en la consola. Luego, te pedirá si deseas generar una nueva. Si decides continuar, el programa generará una nueva contraseña asegurándose de que sea única.
