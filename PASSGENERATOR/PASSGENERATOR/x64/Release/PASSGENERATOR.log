@@ -1,4 +1,6 @@
 ﻿  main.c
-D:\HaranElola\programacion\repos\PASSGENERATOR\PASSGENERATOR\main.c(23,15): warning C4013: 'createPass' sin definir; se supone que extern devuelve como resultado int
-main.obj : error LNK2001: símbolo externo createPass sin resolver
-D:\HaranElola\programacion\repos\PASSGENERATOR\x64\Release\PASSGENERATOR.exe : fatal error LNK1120: 1 externos sin resolver
+  Generando código
+  Previous IPDB not found, fall back to full compilation.
+  All 10 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Generación de código finalizada
+  PASSGENERATOR.vcxproj -> D:\HaranElola\programacion\repos\PASSGENERATOR\x64\Release\PASSGENERATOR.exe

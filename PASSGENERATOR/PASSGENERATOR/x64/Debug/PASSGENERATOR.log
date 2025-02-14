@@ -1,4 +1,2 @@
 ﻿  main.c
-D:\HaranElola\programacion\repos\PASSGENERATOR\PASSGENERATOR\main.c(23,15): warning C4013: 'createPass' sin definir; se supone que extern devuelve como resultado int
-main.obj : error LNK2019: símbolo externo createPass sin resolver al que se hace referencia en la función main
-D:\HaranElola\programacion\repos\PASSGENERATOR\x64\Debug\PASSGENERATOR.exe : fatal error LNK1120: 1 externos sin resolver
+  PASSGENERATOR.vcxproj -> D:\HaranElola\programacion\repos\PASSGENERATOR\x64\Debug\PASSGENERATOR.exe

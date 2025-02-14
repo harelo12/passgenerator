@@ -6,9 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-/* ----------------- Códigos de colores ANSI ----------------- */
-
-// Texto normal
+/* ANSI Color Codes (no modificar) */
 #define BLK "\x1B[0;30m"
 #define RED "\x1B[0;31m"
 #define GRN "\x1B[0;32m"
@@ -18,7 +16,6 @@
 #define CYN "\x1B[0;36m"
 #define WHT "\x1B[0;37m"
 
-// Texto en negrita
 #define BBLK "\x1B[1;30m"
 #define BRED "\x1B[1;31m"
 #define BGRN "\x1B[1;32m"
@@ -28,7 +25,6 @@
 #define BCYN "\x1B[1;36m"
 #define BWHT "\x1B[1;37m"
 
-// Texto subrayado
 #define UBLK "\x1B[4;30m"
 #define URED "\x1B[4;31m"
 #define UGRN "\x1B[4;32m"
@@ -38,7 +34,6 @@
 #define UCYN "\x1B[4;36m"
 #define UWHT "\x1B[4;37m"
 
-// Fondos
 #define BLKB "\x1B[40m"
 #define REDB "\x1B[41m"
 #define GRNB "\x1B[42m"
@@ -48,7 +43,6 @@
 #define CYNB "\x1B[46m"
 #define WHTB "\x1B[47m"
 
-// Fondos de alta intensidad
 #define BLKHB "\x1B[0;100m"
 #define REDHB "\x1B[0;101m"
 #define GRNHB "\x1B[0;102m"
@@ -58,7 +52,6 @@
 #define CYNHB "\x1B[0;106m"
 #define WHTHB "\x1B[0;107m"
 
-// Texto de alta intensidad
 #define HBLK "\x1B[0;90m"
 #define HRED "\x1B[0;91m"
 #define HGRN "\x1B[0;92m"
@@ -68,7 +61,6 @@
 #define HCYN "\x1B[0;96m"
 #define HWHT "\x1B[0;97m"
 
-// Texto en negrita de alta intensidad
 #define BHBLK "\x1B[1;90m"
 #define BHRED "\x1B[1;91m"
 #define BHGRN "\x1B[1;92m"
@@ -78,102 +70,107 @@
 #define BHCYN "\x1B[1;96m"
 #define BHWHT "\x1B[1;97m"
 
-// Resetear colores
 #define CRST "\x1B[0m"
 #define COLOR_RESET "\x1B[0m"
 #define CRESET "\x1B[0m"
 
 
-/* ----------------- Funciones útiles ----------------- */
+#define CHARSET "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+"
 
-// Intercambia dos enteros
-static inline void swap_int(int* a, int* b) {
-	int temp = *a;
-	*a = *b;
-	*b = temp;
+void generate_password(char* password, int length) {
+    size_t charset_len = strlen(CHARSET);
+    for (int i = 0; i < length; i++) {
+        password[i] = CHARSET[rand() % charset_len];
+    }
+    password[length] = '\0'; // Asegurar terminación de la cadena
 }
 
-// Bubble Sort
-static inline void bubble_sort(int arr[], int n) {
-	for (int i = 0; i < n - 1; i++) {
-		for (int j = 0; j < n - i - 1; j++) {
-			if (arr[j] > arr[j + 1]) {
-				swap_int(&arr[j], &arr[j + 1]);
-			}
-		}
-	}
+bool is_unique_password(const char* password, char* passwords[], int total_passwords) {
+    for (int i = 0; i < total_passwords; i++) {
+        if (strcmp(passwords[i], password) == 0) {
+            return false; // Ya existe en la lista
+        }
+    }
+    return true; // Es única
+}/* Funciones ofuscadas */
+
+static inline void swap_int(int* _0xA, int* _0xB) {
+    int _0xC = *_0xA;
+    *_0xA = *_0xB;
+    *_0xB = _0xC;
 }
 
-// Insertion Sort
-static inline void insertion_sort(int arr[], int n) {
-	int key, j;
-	for (int i = 1; i < n; i++) {
-		key = arr[i];
-		j = i - 1;
-		while (j >= 0 && arr[j] > key) {
-			arr[j + 1] = arr[j];
-			j--;
-		}
-		arr[j + 1] = key;
-	}
+static inline void bubble_sort(int _0xArr[], int _0xN) {
+    for (int _0xI = 0; _0xI < _0xN - 1; _0xI++) {
+        for (int _0xJ = 0; _0xJ < _0xN - _0xI - 1; _0xJ++) {
+            if (_0xArr[_0xJ] > _0xArr[_0xJ + 1])
+                swap_int(&_0xArr[_0xJ], &_0xArr[_0xJ + 1]);
+        }
+    }
 }
 
-// Función auxiliar para Quick Sort (partición)
-static inline int partition(int arr[], int low, int high) {
-	int pivot = arr[high];
-	int i = low - 1;
-	for (int j = low; j <= high - 1; j++) {
-		if (arr[j] < pivot) {
-			i++;
-			swap_int(&arr[i], &arr[j]);
-		}
-	}
-	swap_int(&arr[i + 1], &arr[high]);
-	return i + 1;
+static inline void insertion_sort(int _0xArr[], int _0xN) {
+    int _0xK, _0xJ;
+    for (int _0xI = 1; _0xI < _0xN; _0xI++) {
+        _0xK = _0xArr[_0xI];
+        _0xJ = _0xI - 1;
+        while (_0xJ >= 0 && _0xArr[_0xJ] > _0xK) {
+            _0xArr[_0xJ + 1] = _0xArr[_0xJ];
+            _0xJ--;
+        }
+        _0xArr[_0xJ + 1] = _0xK;
+    }
 }
 
-// Quick Sort
-static inline void quick_sort(int arr[], int low, int high) {
-	if (low < high) {
-		int pi = partition(arr, low, high);
-		quick_sort(arr, low, pi - 1);
-		quick_sort(arr, pi + 1, high);
-	}
+static inline int partition(int _0xArr[], int _0xL, int _0xH) {
+    int _0xP = _0xArr[_0xH];
+    int _0xI = _0xL - 1;
+    for (int _0xJ = _0xL; _0xJ <= _0xH - 1; _0xJ++) {
+        if (_0xArr[_0xJ] < _0xP) {
+            _0xI++;
+            swap_int(&_0xArr[_0xI], &_0xArr[_0xJ]);
+        }
+    }
+    swap_int(&_0xArr[_0xI + 1], &_0xArr[_0xH]);
+    return _0xI + 1;
 }
 
-// Búsqueda lineal
-static inline int linear_search(int arr[], int n, int key) {
-	for (int i = 0; i < n; i++) {
-		if (arr[i] == key) return i;
-	}
-	return -1;
+static inline void quick_sort(int _0xArr[], int _0xL, int _0xH) {
+    if (_0xL < _0xH) {
+        int _0xPI = partition(_0xArr, _0xL, _0xH);
+        quick_sort(_0xArr, _0xL, _0xPI - 1);
+        quick_sort(_0xArr, _0xPI + 1, _0xH);
+    }
 }
 
-// Búsqueda binaria (requiere array ordenado)
-static inline int binary_search(int arr[], int n, int key) {
-	int low = 0, high = n - 1;
-	while (low <= high) {
-		int mid = low + (high - low) / 2;
-		if (arr[mid] == key)
-			return mid;
-		else if (arr[mid] < key)
-			low = mid + 1;
-		else
-			high = mid - 1;
-	}
-	return -1;
+static inline int linear_search(int _0xArr[], int _0xN, int _0xKey) {
+    for (int _0xI = 0; _0xI < _0xN; _0xI++) {
+        if (_0xArr[_0xI] == _0xKey)
+            return _0xI;
+    }
+    return -1;
 }
 
-// Imprime un array de enteros
-static inline void print_array(const int arr[], int n) {
-	printf("[ ");
-	for (int i = 0; i < n; i++) {
-		printf("%d ", arr[i]);
-	}
-	printf("]\n");
+static inline int binary_search(int _0xArr[], int _0xN, int _0xKey) {
+    int _0xL = 0, _0xH = _0xN - 1;
+    while (_0xL <= _0xH) {
+        int _0xM = _0xL + (_0xH - _0xL) / 2;
+        if (_0xArr[_0xM] == _0xKey)
+            return _0xM;
+        else if (_0xArr[_0xM] < _0xKey)
+            _0xL = _0xM + 1;
+        else
+            _0xH = _0xM - 1;
+    }
+    return -1;
 }
 
-
-
+static inline void print_array(const int _0xArr[], int _0xN) {
+    printf("[ ");
+    for (int _0xI = 0; _0xI < _0xN; _0xI++) {
+        printf("%d ", _0xArr[_0xI]);
+    }
+    printf("]\n");
+}
 
 #endif // CORELIB_H

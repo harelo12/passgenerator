@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "D:\\HaranElola\\programacion\\repos\\PASSGENERATOR\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0DBA2332-3133-4B71-8AB1-6C997BC1AE4F}|PASSGENERATOR\\PASSGENERATOR.vcxproj|D:\\HaranElola\\programacion\\repos\\PASSGENERATOR\\PASSGENERATOR\\corelib.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0DBA2332-3133-4B71-8AB1-6C997BC1AE4F}|PASSGENERATOR\\PASSGENERATOR.vcxproj|solutionrelative:PASSGENERATOR\\corelib.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0DBA2332-3133-4B71-8AB1-6C997BC1AE4F}|PASSGENERATOR\\PASSGENERATOR.vcxproj|D:\\HaranElola\\programacion\\repos\\PASSGENERATOR\\PASSGENERATOR\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{0DBA2332-3133-4B71-8AB1-6C997BC1AE4F}|PASSGENERATOR\\PASSGENERATOR.vcxproj|solutionrelative:PASSGENERATOR\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DBA2332-3133-4B71-8AB1-6C997BC1AE4F}|PASSGENERATOR\\PASSGENERATOR.vcxproj|D:\\HaranElola\\programacion\\repos\\PASSGENERATOR\\PASSGENERATOR\\main.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0DBA2332-3133-4B71-8AB1-6C997BC1AE4F}|PASSGENERATOR\\PASSGENERATOR.vcxproj|solutionrelative:PASSGENERATOR\\main.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0DBA2332-3133-4B71-8AB1-6C997BC1AE4F}|PASSGENERATOR\\PASSGENERATOR.vcxproj|D:\\HaranElola\\programacion\\repos\\PASSGENERATOR\\PASSGENERATOR\\corelib.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0DBA2332-3133-4B71-8AB1-6C997BC1AE4F}|PASSGENERATOR\\PASSGENERATOR.vcxproj|solutionrelative:PASSGENERATOR\\corelib.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,26 +30,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "corelib.h",
               "DocumentMoniker": "D:\\HaranElola\\programacion\\repos\\PASSGENERATOR\\PASSGENERATOR\\corelib.h",
               "RelativeDocumentMoniker": "PASSGENERATOR\\corelib.h",
               "ToolTip": "D:\\HaranElola\\programacion\\repos\\PASSGENERATOR\\PASSGENERATOR\\corelib.h",
               "RelativeToolTip": "PASSGENERATOR\\corelib.h",
-              "ViewState": "AQIAAJcAAAAAAAAAAAAwwKsAAAACAAAA",
+              "ViewState": "AQIAAEUAAAAAAAAAAAAAAE4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-02-14T10:16:48.975Z",
+              "WhenOpened": "2025-02-14T11:10:28.823Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "main.h",
+              "DocumentMoniker": "D:\\HaranElola\\programacion\\repos\\PASSGENERATOR\\PASSGENERATOR\\main.h",
+              "RelativeDocumentMoniker": "PASSGENERATOR\\main.h",
+              "ToolTip": "D:\\HaranElola\\programacion\\repos\\PASSGENERATOR\\PASSGENERATOR\\main.h",
+              "RelativeToolTip": "PASSGENERATOR\\main.h",
+              "ViewState": "AQIAADEAAAAAAAAAAAAqwEsAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-14T10:51:59.802Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "main.c",
               "DocumentMoniker": "D:\\HaranElola\\programacion\\repos\\PASSGENERATOR\\PASSGENERATOR\\main.c",
               "RelativeDocumentMoniker": "PASSGENERATOR\\main.c",
               "ToolTip": "D:\\HaranElola\\programacion\\repos\\PASSGENERATOR\\PASSGENERATOR\\main.c",
               "RelativeToolTip": "PASSGENERATOR\\main.c",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAwwBwAAAAAAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAqwA8AAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2025-02-13T11:29:56.598Z",
               "EditorCaption": ""
