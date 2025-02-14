@@ -1,40 +1,42 @@
-# 🔐 PASSGENERATOR - Generador de Contraseñas Seguras
+
+# 🔐 **PASSGENERATOR** - Generador de Contraseñas Seguras
 
 ![PassGenerator](https://img.shields.io/badge/Security-High-green.svg) ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 
-## 🚀 Descripción
-PASSGENERATOR es un potente generador de contraseñas aleatorias seguras, diseñado para su uso en criptografía y seguridad digital. Con este programa, puedes generar contraseñas robustas, únicas y altamente configurables.
+## 🚀 **Descripción**
+**PASSGENERATOR** es una herramienta diseñada para generar contraseñas seguras y aleatorias, asegurando alta protección para tus cuentas en línea. El generador es totalmente configurable y permite crear contraseñas únicas con un conjunto personalizado de caracteres. Además, guarda automáticamente las contraseñas generadas en un archivo si así lo deseas.
 
-## 📌 Características
-✅ Generación de contraseñas aleatorias con una longitud configurable.
-✅ Asegura que las contraseñas generadas sean únicas.
-✅ Personalización del conjunto de caracteres (letras, números y caracteres especiales).
-✅ Interfaz en consola intuitiva y fácil de usar.
-✅ Compatible con Windows.
+## 📌 **Características**
+- ✅ **Generación de contraseñas aleatorias** con longitud configurable.
+- ✅ **Garantiza contraseñas únicas** para evitar repeticiones.
+- ✅ **Personalización de caracteres** (letras, números, símbolos especiales).
+- ✅ **Interfaz de usuario amigable** en consola.
+- ✅ **Guardar contraseñas** generadas en un archivo de texto.
+- ✅ Compatible con **Windows**.
 
-## 🛠️ Tecnologías Utilizadas
+## 🛠️ **Tecnologías Utilizadas**
 - Lenguaje: **C**
-- API de Windows
-- Consola de comandos
+- API de **Windows**
+- Consola de **Comandos**
 
 ---
 
-## 📥 Instalación
-Para comenzar a usar PASSGENERATOR, sigue estos pasos:
+## 📥 **Instalación**
+Para comenzar a usar **PASSGENERATOR**, sigue estos pasos:
 
-### 1️⃣ Clonar el repositorio:
+### 1️⃣ **Clonar el repositorio**:
 ```bash
 git clone https://github.com/harelo12/passgenerator.git
 ```
 
-### 2️⃣ Compilación:
+### 2️⃣ **Compilación**:
 Si usas **MinGW**, ejecuta:
 ```bash
 gcc main.c -o passgenerator.exe
 ```
 Si usas **Visual Studio**, abre el proyecto y compílalo directamente desde el IDE.
 
-### 3️⃣ Ejecución:
+### 3️⃣ **Ejecutar el programa**:
 Ejecuta el programa desde la terminal con:
 ```bash
 ./passgenerator.exe
@@ -42,27 +44,28 @@ Ejecuta el programa desde la terminal con:
 
 ---
 
-## 🖥️ Uso
-Cuando ejecutes PASSGENERATOR, el programa generará una contraseña aleatoria y te preguntará si deseas generar otra.
+## 🖥️ **Uso**
+Cuando ejecutes **PASSGENERATOR**, el programa generará una contraseña aleatoria. Después, te preguntará si deseas generar otra contraseña o guardarla en un archivo.
 
-Ejemplo de salida:
+**Ejemplo de salida**:
 ```bash
 Contraseña generada: j9!Mn6^lP3#K
-Desea repetir (S/n)?
+¿Deseas repetir (S/n)?
 ```
 
-Opciones:
+**Opciones**:
 - **S**: Generar una nueva contraseña.
 - **n**: Salir del programa.
 
 ---
 
-## ⚙️ Personalización
-Puedes modificar la configuración predeterminada de PASSGENERATOR:
-- **Longitud de la contraseña**: Cambiando el valor de `PASSWORD_LENGTH`.
-- **Caracteres permitidos**: Editando el conjunto `CHARSET`.
+## ⚙️ **Personalización**
+Puedes modificar la configuración predeterminada de **PASSGENERATOR** editando las siguientes constantes en el código:
 
-Ejemplo de personalización en el código:
+- **Longitud de la contraseña**: Cambia el valor de `PASSWORD_LENGTH`.
+- **Caracteres permitidos**: Edita el conjunto `CHARSET`.
+
+**Ejemplo de personalización en el código**:
 ```c
 #define PASSWORD_LENGTH 16 // Longitud de la contraseña
 const char CHARSET[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
@@ -70,7 +73,17 @@ const char CHARSET[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123
 
 ---
 
-## 🛠️ Contribuciones
+## 🛠️ **Funciones principales**
+**PASSGENERATOR** incluye varias funciones de utilidad para mejorar el control sobre las contraseñas generadas.
+
+- `generate_password`: Genera una contraseña aleatoria de longitud configurada.
+- `is_unique_password`: Verifica que la contraseña generada sea única entre las anteriores.
+- `savePass`: Guarda las contraseñas generadas en un archivo de texto `passlist.txt`.
+- `mainfunc`: Controla la lógica del programa, incluyendo la opción de guardar contraseñas y repetir el proceso.
+
+---
+
+## 🧑‍💻 **Contribuciones**
 💡 Se aceptan mejoras en:
 - Seguridad del generador de contraseñas.
 - Nuevas funcionalidades.
@@ -80,12 +93,11 @@ Si deseas contribuir, abre un **issue** o envía un **pull request**. 🚀
 
 ---
 
-## 📜 Licencia
-Este proyecto está bajo la **Licencia MIT**. Consulta el archivo LICENSE para más detalles.
+## 📜 **Licencia**
+Este proyecto está bajo la **Licencia MIT**. Consulta el archivo `LICENSE` para más detalles.
 
 ---
 
-### 👤 Autor
-Creado por: **harelo12**
-Fecha de creación: **13 de febrero de 2025**
-
+### 👤 **Autor**
+- **Creado por**: **harelo12**
+- **Fecha de creación**: **13 de febrero de 2025**
