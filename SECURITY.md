@@ -15,7 +15,7 @@
 Si encuentras una vulnerabilidad de seguridad en este repositorio, por favor, sigue los pasos abajo para reportarla de manera responsable:
 
 1. **No abra un problema público**: por favor, no publique vulnerabilidades de seguridad en los Issues o Pull Requests.
-2. **Envía un correo electrónico** a: [tu_correo@example.com](mailto:tu_correo@example.com) con el título "Reporte de vulnerabilidad de seguridad".
+2. **Envía un correo electrónico** a: [tu_harandeu@gmail.com](mailto:harandeu@gmail.com) con el título "Reporte de vulnerabilidad de seguridad".
 3. **Describe el problema** con el mayor detalle posible, incluyendo:
    - Pasos para reproducirlo
    - El impacto de la vulnerabilidad
