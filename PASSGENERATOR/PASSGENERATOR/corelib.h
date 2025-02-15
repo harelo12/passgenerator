@@ -6,7 +6,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-/* ANSI Color Codes (no modificar) */
 #define BLK "\x1B[0;30m"
 #define RED "\x1B[0;31m"
 #define GRN "\x1B[0;32m"
@@ -82,17 +81,17 @@ void generate_password(char* password, int length) {
     for (int i = 0; i < length; i++) {
         password[i] = CHARSET[rand() % charset_len];
     }
-    password[length] = '\0'; // Asegurar terminación de la cadena
+    password[length] = '\0'; 
 }
 
 bool is_unique_password(const char* password, char* passwords[], int total_passwords) {
     for (int i = 0; i < total_passwords; i++) {
         if (strcmp(passwords[i], password) == 0) {
-            return false; // Ya existe en la lista
+            return false;
         }
     }
-    return true; // Es única
-}/* Funciones ofuscadas */
+    return true; 
+}
 
 static inline void swap_int(int* _0xA, int* _0xB) {
     int _0xC = *_0xA;
