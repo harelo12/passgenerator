@@ -26,7 +26,41 @@
 #include <unistd.h>
 #endif
 
-int main(void){
+void clear_screen() {
+#ifdef _WIN32
+    system("cls");
+#else
+    system("clear");
+#endif
+}
+
+void print_menu() {
+    printf(GRN);
+    printf("=====================================\n");
+    printf("=          %s          =\n", PROJECT_NAME);
+    printf("=====================================\n");
+    printf(CRST);
+    printf("1. Ejecutar\n");
+    printf("0. Salir\n");
+    printf("Seleccione una opción: ");
+}
+
+void execute_option() {
+    printf(YEL "Ejecutando la opción seleccionada...\n" CRST);
+    // Aquí puedes llamar a la función principal de tu programa
+    int retFlag;
+    int retVal = mainfunc(&retFlag);
+    if (retFlag == 1) {
+        exit(retVal);
+    }
+}
+
+void exit_program() {
+    printf(RED "Saliendo del programa...\n" CRST);
+    exit(0);
+}
+
+int main(void) {
     printf("\033]0;%s\007", PROJECT_NAME);
 
 #ifdef _WIN32
@@ -34,15 +68,24 @@ int main(void){
     SetConsoleOutputCP(1252);
     system("color a");
 #else
-    
-    printf(LGRN);
+    printf(GRN);
 #endif
 
-    int retFlag;
+    void (*menu_options[2])() = {exit_program, execute_option};
 
-    int retVal = mainfunc(&retFlag);
-    if (retFlag == 1)
-        return retVal;
+    int option;
+    while (true) {
+        clear_screen();
+        print_menu();
+        scanf("%d", &option);
+
+        if (option >= 0 && option < 2) {
+            menu_options[option]();
+        } else {
+            printf(RED "Opción no válida. Inténtelo de nuevo.\n" CRST);
+            sleep(2);
+        }
+    }
 
     return 0;
 }
