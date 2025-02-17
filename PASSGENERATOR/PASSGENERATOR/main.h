@@ -1,12 +1,23 @@
 /* main.h */
 #pragma once
 #include "corelib.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+#include <ctype.h>
+#include <stdbool.h>
+
 #define PASSWORD_LENGTH 20
 #define CHARSET "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+"
 #define MAX_PASSWORDS 1000
 
-int savePass(int cont, const char password[], int* retFlag);
-int mainfunc(int* retFlag);
+#ifdef _WIN32
+    #define CLEAR_SCREEN "cls"
+#else
+    #define CLEAR_SCREEN "clear"
+#endif
+
 
 int savePass(int cont, const char password[], int* retFlag) {
     *retFlag = 1;
@@ -15,14 +26,15 @@ int savePass(int cont, const char password[], int* retFlag) {
         printf(RED "\nError al abrir/crear archivo\n" CRST);
         return 1;
     }
-    fprintf(passfile, "Contraseña[%d]: %s\n", cont, password);
+    fprintf(passfile, "ContraseÃ±a[%d]: %s\n", cont, password);
     fclose(passfile);
-    printf(GRN "\nContraseña guardada correctamente\n" CRST);
+    printf(GRN "\nContraseÃ±a guardada correctamente\n" CRST);
     *retFlag = 0;
     return 0;
 }
 
 int mainfunc(int* retFlag) {
+    FILE *file = fopen("contador.txt", "r+");
     *retFlag = 1;
     char resp;
     char fresp;
@@ -30,6 +42,16 @@ int mainfunc(int* retFlag) {
     bool repetir = true;
     char* passwords[MAX_PASSWORDS] = { 0 };
     int total_passwords = 0;
+
+    if (file == NULL) {
+        file = fopen("contador.txt", "w+");
+        if (file == NULL) {
+            perror("Error al abrir el archivo");
+            return 1;
+        }
+    } else {
+        fscanf(file, "%d", &cont);
+    }
 
     srand((unsigned int)time(NULL));
 
@@ -48,9 +70,9 @@ int mainfunc(int* retFlag) {
         strcpy(passwords[total_passwords], password);
         total_passwords++;
 
-        system("cls");
-        printf(BLU "Contraseña generada: %s\n" CRST, password);
-        printf(YEL "¿Desea guardarla en un archivo? (S/n): " CRST);
+        system(CLEAR_SCREEN);
+        printf(BLU "ContraseÃ±a generada: %s\n" CRST, password);
+        printf(YEL "Â¿Desea guardarla en un archivo? (S/n): " CRST);
         fresp = getchar();
         while (getchar() != '\n');
         fresp = tolower(fresp);
@@ -60,8 +82,12 @@ int mainfunc(int* retFlag) {
             if (saveRet == 1)
                 return retVal;
             cont++;
+            rewind(file);
+            fprintf(file, "%d", cont);
+            fflush(file);
         }
-        printf(YEL "¿Desea repetir (S/n)? " CRST);
+        
+        printf(YEL "Â¿Desea repetir (S/n)? " CRST);
         resp = getchar();
         while (getchar() != '\n');
         resp = tolower(resp);
@@ -71,6 +97,7 @@ int mainfunc(int* retFlag) {
     for (int i = 0; i < total_passwords; i++) {
         free(passwords[i]);
     }
+    fclose(file);
     *retFlag = 0;
     return 0;
 }

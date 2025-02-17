@@ -5,6 +5,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#ifdef _WIN32
+#include <windows.h>
+#endif
 
 #define BLK "\x1B[0;30m"
 #define RED "\x1B[0;31m"
@@ -69,12 +72,26 @@
 #define BHCYN "\x1B[1;96m"
 #define BHWHT "\x1B[1;97m"
 
+#define LGRN "\033[32m"
+
 #define CRST "\x1B[0m"
 #define COLOR_RESET "\x1B[0m"
 #define CRESET "\x1B[0m"
 
-
 #define CHARSET "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+"
+
+void enable_virtual_terminal_processing() {
+#ifdef _WIN32
+    HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+    if (hOut == INVALID_HANDLE_VALUE) return;
+
+    DWORD dwMode = 0;
+    if (!GetConsoleMode(hOut, &dwMode)) return;
+
+    dwMode |= ENABLE_VIRTUAL_TERMINAL_PROCESSING;
+    SetConsoleMode(hOut, dwMode);
+#endif
+}
 
 void generate_password(char* password, int length) {
     size_t charset_len = strlen(CHARSET);
