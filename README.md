@@ -3,7 +3,7 @@
 
 ![PassGenerator](https://img.shields.io/badge/Security-High-green.svg) ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 ***
-> .[!NOTE].
+> [!NOTE]
 > Solo sirve para Windows
 Instalador de la aplicación lista para usar: [Click Aquí](https://www.mediafire.com/file/fkf438smacuhd3p/setup-passgenerator.exe/file)
 ***
