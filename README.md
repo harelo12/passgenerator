@@ -3,7 +3,7 @@
 
 ![PassGenerator](https://img.shields.io/badge/Security-High-green.svg) ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 ***
-**Pronto habrá un instalador**
+Instalador de la aplicación lista para usar: [Click Aquí](https://www.mediafire.com/file/fkf438smacuhd3p/setup-passgenerator.exe/file)
 ***
 ## 🚀 **Descripción**
 **PASSGENERATOR** es una herramienta diseñada para generar contraseñas seguras y aleatorias, asegurando alta protección para tus cuentas en línea. El generador es totalmente configurable y permite crear contraseñas únicas con un conjunto personalizado de caracteres. Además, guarda automáticamente las contraseñas generadas en un archivo si así lo deseas.
