@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PASSGENERATOR</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+   
+    body {
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    }
+    input:read-only {
+      caret-color: transparent;
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+  <div class="bg-gray-800 p-8 rounded-xl shadow-2xl max-w-md w-full">
+    <h1 class="text-3xl font-bold text-center mb-6">Generador de Contraseñas</h1>
+    
+    <!-- Selector de longitud -->
+    <div class="mb-4">
+      <label for="length" class="block text-sm font-medium text-gray-300 mb-1">Longitud:</label>
+      <input id="length" type="number" value="16" min="4" max="32" class="w-full p-2 rounded bg-gray-700 text-white">
+    </div>
+    
+    <!-- Opciones de caracteres -->
+    <div class="mb-4 flex flex-col space-y-2">
+      <label class="inline-flex items-center">
+        <input type="checkbox" id="uppercase" checked class="form-checkbox h-5 w-5 text-blue-500">
+        <span class="ml-2">Mayúsculas</span>
+      </label>
+      <label class="inline-flex items-center">
+        <input type="checkbox" id="lowercase" checked class="form-checkbox h-5 w-5 text-blue-500">
+        <span class="ml-2">Minúsculas</span>
+      </label>
+      <label class="inline-flex items-center">
+        <input type="checkbox" id="numbers" checked class="form-checkbox h-5 w-5 text-blue-500">
+        <span class="ml-2">Números</span>
+      </label>
+      <label class="inline-flex items-center">
+        <input type="checkbox" id="symbols" checked class="form-checkbox h-5 w-5 text-blue-500">
+        <span class="ml-2">Símbolos</span>
+      </label>
+    </div>
+    
+    <div class="mb-4">
+      <input type="text" id="password" readonly class="w-full p-2 rounded bg-gray-700 text-white text-center">
+    </div>
+    
+    <div class="flex justify-between">
+      <button id="generate" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Generar</button>
+      <button id="copy" class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded">Copiar</button>
+    </div>
+  </div>
+  
+  <script>
+    const generateBtn = document.getElementById('generate');
+    const copyBtn = document.getElementById('copy');
+    const passwordInput = document.getElementById('password');
+    
+    generateBtn.addEventListener('click', () => {
+      const length = parseInt(document.getElementById('length').value);
+      const includeUpper = document.getElementById('uppercase').checked;
+      const includeLower = document.getElementById('lowercase').checked;
+      const includeNumbers = document.getElementById('numbers').checked;
+      const includeSymbols = document.getElementById('symbols').checked;
+      
+      let characterSet = '';
+      if (includeUpper) characterSet += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      if (includeLower) characterSet += 'abcdefghijklmnopqrstuvwxyz';
+      if (includeNumbers) characterSet += '0123456789';
+      if (includeSymbols) characterSet += '!@#$%^&*()_+~`|}{[]:;?><,./-=';
+      
+      if (!characterSet) {
+        passwordInput.value = 'Selecciona al menos una opción';
+        return;
+      }
+      
+      let password = '';
+      for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * characterSet.length);
+        password += characterSet[randomIndex];
+      }
+      passwordInput.value = password;
+    });
+    
+    copyBtn.addEventListener('click', () => {
+      if (!passwordInput.value || passwordInput.value === 'Selecciona al menos una opción') return;
+      navigator.clipboard.writeText(passwordInput.value)
+        .then(() => alert('Contraseña copiada al portapapeles!'))
+        .catch(() => alert('Error al copiar'));
+    });
+  </script>
+</body>
+</html>
