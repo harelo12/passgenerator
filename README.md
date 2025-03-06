@@ -6,7 +6,7 @@
 > [!NOTE]
 > Instalador de la aplicación lista para usar: [Click Aquí](https://www.mediafire.com/file/fkf438smacuhd3p/setup-passgenerator.exe/file) (Solo sirve para Windows)
 
-> [!ALERT]
+> [!WARNING]
 > El instalador tambien descarga el repositorio
 ***
 ## 🚀 **Descripción**
